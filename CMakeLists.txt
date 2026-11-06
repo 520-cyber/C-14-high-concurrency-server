@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.10)
+project(HighConcurrencyServer)
+SET(CMAKE_CXX_STANDARD 20)
+SET(CMAKE_CXX_STANDARD_REQUIRED ON)
+include_directories(include)
+find_package(Threads REQUIRED)
+add_executable(server src/server.cpp src/ThreadPool.cpp)
+target_link_libraries(server Threads::Threads)
